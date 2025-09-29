@@ -95,13 +95,13 @@ public class MainFrame extends JFrame {
         try {
             String marca = (String) cbMarca.getSelectedItem();
             String linea = (String) cbLinea.getSelectedItem();
-            Integer anio = (Integer) cbAño.getSelectedItem();
-            if (marca == null || linea == null || anio == null) {
+            Integer año = (Integer) cbAño.getSelectedItem();
+            if (marca == null || linea == null || año == null) {
                 JOptionPane.showMessageDialog(this, "Selecciona marca, línea y año", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            var opt = repo.findVehicle(marca, linea, anio);
+            var opt = repo.findVehicle(marca, linea, año);
             if (opt.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Vehículo no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
                 return;

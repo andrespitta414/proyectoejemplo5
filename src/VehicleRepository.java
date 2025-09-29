@@ -24,16 +24,6 @@ public class VehicleRepository {
         return s;
     }
 
-    public Set<Integer> getAñsByMarcaLinea(String marca, String linea) {
-        Set<Integer> s = new TreeSet<>();
-        for (Vehicle v : vehicles) {
-            if (v.getMarca().equalsIgnoreCase(marca) && v.getLinea().equalsIgnoreCase(linea)) {
-                s.add(v.getAño());
-            }
-        }
-        return s;
-    }
-
     public Optional<Vehicle> findVehicle(String marca, String linea, int año) {
         return vehicles.stream()
                 .filter(v -> v.getMarca().equalsIgnoreCase(marca)
